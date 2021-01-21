@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://fleeuestc.numbguy.top/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>平安成电智慧通行</title>
+</head>
+
+
+<body style="">
+  <!--index.wxml-->
+  <!-- <input type="text" value="1017594942@qq.com" />
+  <button onclick="disableElement()">禁用</button>
+  <button onclick="radiochange()">test</button> -->
+
+  
+  <div class="outer">
+    <div class="container">
+      <div>
+        <div class="info">
+          <div class="custom-name">
+            <label>我是谁</label>
+            <input type="text" oninput="namechange()" id="custom-name-input" class="custom-name-input">
+          </div>
+          
+          <!--<div class="io">-->
+          <!--  <td>-->
+
+          <!--    <input name="io" value="1" type="radio" οnclick="radiochange()">-->
+          <!--    <label>我从哪里来</label><br>-->
+          <!--    <input name="io" value="0" type="radio" οnclick="radiochange()">-->
+          <!--    <label for="sex">我要到哪里去</label><br>-->
+
+          <!--  </td>-->
+          <!--</div>-->
+
+          <button id="infoselected">确认</button>
+        </div>
+      </div>
+
+
+      <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 
+      获取头像昵称 
+      </button> -->
+      <block>
+        <div class="usermotto">
+          <!-- <text class="user-motto">{{motto}}</text> -->
+          <text class="auth" id="auth">研究生用户，入校授权有效！</text>
+        </div>
+        <!-- <div class="divLine"></div> -->
+        <hr align="center" color="#E0E3DA" size="0.5">
+
+        <div class="table">
+          <block>
+            <div class="tr">
+              <div class="td-left">
+                <div class="icon">
+                  <img src="./user.png" mode="aspectFill"> 
+                </div>
+              </div>
+              <div class="td-mid">
+                <div class="user-left">用户姓名</div>
+              </div>
+              <div class="td-right">
+                <div id="user-right" class="user-right">UESTCer</div>
+              </div>
+            </div>
+            <div class="tr">
+              <div class="td-left">
+                <div class="icon">
+                  <img src="./register.png" mode="aspectFill"> 
+                </div>
+              </div>
+              <div class="td-mid">
+                <div class="register-left">登记类型</div>
+              </div>
+              <div class="td-right">
+                <div class="register-right">研究生（硕士）</div>
+              </div>
+            </div>
+            <div class="tr">
+              <div class="td-left">
+                <div class="icon">
+                  <img src="./time.png" mode="aspectFill"> 
+                </div>
+              </div>
+              <div class="td-mid">
+                <div class="time-left">登记时间</div>
+              </div>
+              <!-- <div class="td-right"><div class="time-right">{{text}}</div></div> -->
+              <div class="td-right">
+                <!-- <div class="scrolltxt">
+                  <div class="marquee_box">
+                    <div class="marquee_text" style="transform: translateX(-{{marqueeDistance}}px)">
+                      <text>{{text}}</text>
+                      <text style="margin-right:{{marquee_margin}}px;"></text>
+                      <text style="margin-right:{{marquee_margin}}px;">{{text}}</text>
+                    </div>
+                  </div>
+                </div> -->
+                <marquee width="240">
+                  <div id="time" style="font-weight: bolder;font-size: 20px;color: #09B094;" behavior="scroll">
+                    蒙多想去哪儿就去哪儿！</div>
+                </marquee>
+              </div>
+            </div>
+            <div class="tr">
+                <button id="but" class="but">
+                   <p id="erwei" class="erwei">前往个人二维码</p>
+               </button>
+            </div>
+            <div id="uestc_picture" class="uestc_picture">
+                 <img src="./UESTC_picture.jpg">
+            </div>
+          </block>
+        </div>
+      </block>
+    </div>
+  </div>
+
+
+<script src="./jquery.min.js.下载"></script>
+<!-- <script type="text/javascript" src="utils/util.js"></script> -->
+<script type="text/javascript" src="./index.js.下载"></script>
+
+<style>
+  /**index.wxss**/
+  .custom-name {
+    display: flex;
+  }
+
+  .custom-name-input {
+    background-color: teal;
+  }
+
+  .userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .userinfo-avatar {
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+  }
+
+  .userinfo-nickname {
+    color: #aaa;
+  }
+
+  .usermotto {
+    /* flex: center; */
+    margin-top: 50px;
+    margin-bottom: 40px;
+    font-size: 22px;
+
+  }
+
+  .auth {
+    color: #008900;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    /* text-shadow: 1px 0 0 #000000;*/
+  }
+
+  .divLine {
+    background: #E0E3DA;
+    width: 100%;
+    height: 3rpx;
+  }
+
+  .icon {
+    /* display:flex;  */
+    /* display: contents;                   */
+    justify-content: center;
+    /* flex-grow: 1; */
+
+    /* margin-left: 5px; */
+  }
+
+  .icon image {
+    width: 25px;
+    height: 25px;
+  }
+
+  .user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+  }
+
+  .user-left {
+    font-family: "黑体";
+    color: #000;
+    font-size: 40rpx;
+    flex-grow: 2;
+
+
+  }
+
+  .user-right {
+    font-family: "黑体";
+    color: #000000;
+    font-size: 25px;
+    align-items: right;
+    font-weight: bold;
+    flex-grow: 3;
+    margin-right: 10px;
+    text-shadow: 1px 0 0 #000000;
+  }
+
+  .register {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+  }
+
+  .register-left {
+    font-family: "黑体";
+    color: #000;
+    font-size: 40rpx;
+  }
+
+  .register-right {
+    font-family: "黑体";
+    color: #000000;
+    font-size: 25px;
+    align-items: right;
+    font-weight: bold;
+    text-shadow: 1px 0 0 #000000;
+  }
+
+  .time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .time-left {
+    font-family: "黑体";
+    color: #000;
+    font-size: 40rpx;
+
+  }
+
+  .time-right {
+    font-family: "黑体";
+    color: #09B094;
+    /* font-size: 60rpx; */
+    align-items: right;
+    font-weight: bold;
+  }
+
+  /* 09B094 */
+
+
+
+
+  /*table*/
+  .table {
+    width: 100%;
+    border: 0px solid darkgray;
+  }
+
+  .tr {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 3rem;
+    align-items: center;
+  }
+
+  .td-left {
+    width: 5%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .td-mid {
+    width: 35%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .td-right {
+    width: 60%;
+    justify-content: center;
+    text-align: right;
+  }
+
+
+
+  .scrolltxt {
+    padding: 0 20rpx;
+    background: transparent;
+  }
+
+  .marquee_box {
+    position: relative;
+    font-size: 80rpx;
+    color: #09B094;
+    font-weight: bold;
+    height: 90rpx;
+    display: block;
+    overflow: hidden;
+  }
+
+  .marquee_text {
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
+    font-size: 20px;
+    height: 90rpx;
+    line-height: 90rpx;
+  }
+
+ .but{
+  background-color: #09B094;
+  box-shadow: all;
+  color: #F5F5F5;
+  border-radius: 5px;
+  padding: 5px 20px;
+ }
+
+ .erwei{
+  line-height: 0;
+  font-size: 15px;
+ }
+  
+ .uestc_picture{
+ display: flex;
+ width: 100%;
+ justify-content: center;
+ align-items: center;
+ margin: 40px auto;
+ }
+</style>
+
+</body></html>
